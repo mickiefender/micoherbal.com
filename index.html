@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Force</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+</head>
+<body>
+    <header class="header1">
+        <!-- Mobile Header -->
+    <div class="mobile-header">
+        <!-- Top Menu Button -->
+        <div class="top-menu" onclick="toggleSection('top-bar-mobile')">
+            <span class="hamburger-icon">&#9776;</span> TOP MENU
+        </div>
+
+        <!-- Logo Section -->
+        <div class="mobile-logo">
+            <img src="logos/OFFICIAL MICO LOGO.png" alt="">
+
+        </div>
+
+        <!-- Menu Button -->
+        <div class="menu-button" onclick="toggleSection('bottom-bar-mobile')">
+            <span class="hamburger-icon">&#9776;</span> MENU
+        </div>
+    </div>
+
+     <!-- Dropdown Menu -->
+<div id="mobile-menu" class="mobile-dropdown-menu">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a onclick="location.href='#about'">About</a></li>
+        <li>
+            <div class="dropdown">
+                <span onclick="toggleSubmenu('products-submenu')">Products <span class="submenu-icon">+</span></span>
+                <ul id="products-submenu" class="submenu">
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                    <li><a href="#">Product 3</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+
+            <div class="dropdown">
+                <span onclick="toggleSubmenu('resources-submenu')">Resources <span class="submenu-icon">+</span></span>
+                <ul id="resources-submenu" class="submenu">
+                    <li><a href="#">Where to Purchase</a></li>
+                    <li><a href="#">Become a Retailer</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <span onclick="toggleSubmenu('media-submenu')">Media <span class="submenu-icon">+</span></span>
+                <ul id="media-submenu" class="submenu">
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Taabea Group</a></li>
+    </ul>
+</div>
+        <!-- Desktop Header -->
+        <div class="top-bar">
+            <div class="logo">
+                <img src="logos/OFFICIAL MICO LOGO.png" alt="Vital Force Logo">
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> <a href="tel:+233544431476">PHONE: <br> +233 544-431-476</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:michaelcoleman106@gmail.com"> 
+                    EMAIL: <br> michaelcoleman106@gmail.com</a></span>
+                <span><i class="fas fa-map-marker-alt"></i> LOCATION: <br> BA205 PAXIFIC AVE, GRNMA Kansaworodo, Takoradi, Ghana</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    
+        <div class="bottom-bar">
+            <nav>
+                <a href="home.html">Home</a>
+               <a onclick="location.href" href="#about">&#2 About</a>
+
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a onclick="location.href='#products'" >Product 1</a>
+                        <a href="#products">Product 2</a>
+                        <a href="#products">Product 3</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="#">Where to purchase</a>
+                        <a href="#">Become a retailer or distributor</a>
+                        <a href="#">Product 3</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Media </span></a>
+                    <div class="dropdown-content">
+                        <a href="#">Photos</a>
+                        <a href="#">Videos</a>
+                        <a href="#">Podcast</a>
+                    </div>
+                </div>
+                <a href="#contact">Contact</a>
+                <a href="#">Mico Group</a>
+            </nav>
+           <a onclick="location.href" href="shop.html" class="shop-now">SHOP NOW</a>
+        </div>
+    </header>
+    
+    
+
+    <div class="hero-banner">
+        <div class="banner-slide active" style="background-image: url('products imgs/Vital Force img.JPG');">
+            <div class="banner-content">
+                <h1>We introduce to you Vital Force </h1>
+                <p>A general wellbeing and multi-purpose product</p>
+            </div>
+        </div>
+        <div class="banner-slide" style="background-image: url('products imgs/img2.jpg');">
+            <div class="banner-content">
+                <h1>Natural Remedies</h1>
+                <p>Discover our range of herbal solutions</p>
+            </div>
+        </div>
+        <div class="banner-slide" style="background-image: url('products imgs/img3.jpg');">
+            <div class="banner-content">
+                <h1>Pure Essential Oils</h1>
+                <p>Heal and rejuvenate naturally</p>
+            </div>
+        </div>
+        <div class="banner-navigation">
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+    </div>
+
+
+    <div class="cart-container">
+    <div class="cart-button" onclick="toggleCart()">
+        🛒 Cart (<span id="cart-count">0</span>)
+    </div>
+    <div id="cart-dropdown" class="cart-dropdown">
+        <h3>Your Cart</h3>
+        <ul id="cart-items">
+            <li>Your cart is empty.</li>
+        </ul>
+        <button id="checkout-button" onclick="checkout()" disabled>Checkout</button>
+    </div>
+</div>
+   
+   
+    <section id="products">
+        <h2>Our Products</h2>
+        <a class="product-text" href="shop.html">
+        <div class="product">
+             <img src="no bg/vital force no bg.png" alt="Product 1">
+            <h3>Vital Force</h3>
+            <p>A blend of nature's best herbs to rejuvenate your body as an immune booster or genral wellbeing.</p> </a>
+            <button onclick="addToCart('Vital Force')">Add to Cart</button>
+        </div>
+
+
+        <a class="product-text" href="shop.html">
+        <div class="product">
+            <img src="no bg/vital force box no bg.png" alt="Product 1">
+            <h3>Vital Elixir</h3>
+            <p>A blend of nature's best herbs to rejuvenate your body.</p> </a>
+            <button onclick="addToCart('Mico Koo')">Add to Cart</button>
+        </div>
+
+
+        <a class="product-text" href="shop.html">
+        <div class="product">
+            <img src="products imgs/img3.jpg" alt="Product 1">
+            <h3>Vital Elixir</h3>
+            <p>A blend of nature's best herbs to rejuvenate your body.</p> </a>
+            <button onclick="addToCart('Mico Capsules')">Add to Cart</button>
+        </div>
+
+        <!-- Add more products here -->
+    </section>
+
+    <section>
+<div class="freq">
+    <span class="freqently"><h1 >FREQUENTLY ASKED QUESTIONS (FAQ)</h1></span> 
+    <div class="buttons">
+        <button>PLACE ORDER HERE</button>
+        <button>SALES DIRECTORY</button>
+        <button>ABOUT VITAL FORCE</button>
+    </div>
+    
+    <div class="faq">
+        <header  onclick="toggleFAQ(this)">WHAT IS VITAL FORCE?</header>
+        <div class="faq-content">
+            <p><strong>VITAL FORCE</strong> is a herbal powder for General Wellbeing, this means you can take it whether you are sick or not. It can also be
+                 taken to support the treatment of any sickness, disease, or infection. It is also known to be a multi-purpose product </p>
+            <p><strong>VITAL FORCE</strong> has duly been registered by the Food and Drugs Authority (FDA) – <strong>FDA/HD1.21-08492</strong> as medicine for general wellbeing.</p>
+        </div><hr>
+        
+        <header onclick="toggleFAQ(this)">DOSAGE (HOW TO TAKE IT)</header>
+        <div class="faq-content">
+        <p><strong>VITAL FORCE</strong> Measure one teaspoon of the powder and mix it with half glass of warm 
+        water, stirr for sometime until it is even and drink it. Repeat this process for the next 12 hours.
+     it should be taken 10minutes before meal  </p>
+     <p><strong>Causion: </strong>Not suitable for pregnant women and lactating mothers,
+    and children under 12 years should consult a physician before use</p>
+    </div><hr>
+
+    <header onclick="toggleFAQ(this)">HOW MANY SACHETS OF VITAL FORCE DO I REQUIRE TO GET WELL?</header>
+        <div class="faq-content">
+        <p>The number of sachets of Vital Force (or any similar product) you may require depends on various factors, including:
+            The severity and nature of your health issue will influence the dosage and duration of treatment. <br><br> Based on this, you
+              might need to take it for between a few weeks to over a year. If you have a viral condition,
+         a viral load test coupled with sincere answers to a few questions will help estimate how long or how many bottles you will need.
+            <br><br> Despite this, you can perform routine viral load checks to determine how well you are 
+            doing, informing you how many can be ok.</p>
+    </div><hr>
+
+    <header onclick="toggleFAQ(this)">WHO NEEDS VITAL FORCE / WHO CAN TAKE IT ?</header>
+    <div class="faq-content">
+        <ul>
+    <li><p>For immune System Competence and multi purpose drug, <strong>VITAL FORCE (Formerly Mico Herbal Powder)</strong> 
+        Can be taken when sick or not to prevent infections or diseases. </li><br>
+        <li><strong>VITAL FORCE</strong> Supports and Facilitates the Treatment and Management of Many Chronic Diseases.​
+            It’s a supplement All Families in the World Need.</p></li> 
+    </ul>
+    </div><hr>
+
+    <header onclick="toggleFAQ(this)">WHAT IS UNIQUE ABOUT VITAL FORCE?</header>
+        <div class="faq-content">
+        <ul><p>
+            <li>100% Natural & Herbal.</li><br>
+            <li>No Known or observable side effect.</li><br>
+            <li>No Preservatives and flavors.</li><br>
+            <li>Its multi purpose (ie. it cures several cronic diseases). </li><br>
+        </p></ul>
+
+    </div><hr>
+
+    <header onclick="toggleFAQ(this)">WHERE CAN SOMEONE GET VITAL FORCE ?</header>
+    <div class="faq-content">
+        <ol><p>
+            <li>You can order directly from our <a onclick="location.href" href="#products">website.</a> </li><br>
+            <li>You can buy from any pharmacy or drug store in Ghana.</li><br>
+            <li>You can visit any of our social media handles to make your purchse.</li>
+        </p></ol>
+    </div><hr>
+    </section>
+    
+
+    </div>
+</div><div class="chat-container">
+    <button id="chat-icon" class="chat-icon">💬</button>
+    <div id="chat-box" class="chat-box" style="display:none;">
+        <form id="contact-form">
+            <h3>Contact Us</h3>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>  
+    
+    <div class="alert-icon">
+        <img src="icons/notification icon.png" alt=""></div>
+
+        <section>
+            <div class="video-container">
+                <video controls autoplay muted loop>
+                    <source src="products imgs/Add a heading.mp4" type="video/mp4">
+                    <source src="your-ad-video.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="ad-text">Advertisement</div>
+            </div>
+        </section>
+            
+
+        <div class="body2">
+        <div class="container">
+            <header class="header">
+                <h1>Meet</h1>
+                <h2>Doc. Michael Coleman</h2>
+                <p class="subtitle">The CEO</p>
+            </header>
+            <div class="profile-card">
+                <img src="products imgs/my image.jpg" alt="Prof. Samuel Ato Duncan" class="profile-image">
+                <h3>DOC.MICHAEL ANNOH COLEMAN</h3>
+                <h4>PROFILE</h4>
+                <ul>
+                    <li><span>★</span> PRESIDENT GENERAL, Mico Manufacturing  Company Limited.</li>
+                    <li><span>★</span> FOUNDER/CEO, Vital Force </li>
+                    <li><span>★</span> FOUNDER/ GENERAL OVERSEER, Messiah Healing Ministry</li>
+                    <li><span>★</span> REGINAL CHAIRMAN, Ghana National Association of Traditional Healers (GNATH)</li>
+                    
+                </ul>
+                <button class="about-button">About the Founder</button>
+            </div>
+        </div>
+    </div>
+
+    
+   
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Vital Force, we are committed to delivering natural solutions for a healthier lifestyle. Our products are sustainably sourced and carefully crafted for maximum benefits.</p>
+    </section>
+
+    <section id="blog">
+        <h2>Herbal Insights</h2>
+        <article>
+            <h3>5 Benefits of Herbal Wellness</h3>
+            <p>Discover the natural advantages of incorporating herbs into your daily routine.</p>
+            <a href="article1.html">Read More</a>
+        </article>
+        <!-- Add more blog posts here -->
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <details>
+            <summary>What are the ingredients?</summary>
+            <p>Our products are made from 100% natural herbs sourced sustainably.</p>
+        </details>
+        <!-- Add more FAQs here -->
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Have Some More Enquiries to make?</h2>
+            <p>Call us for a Free Consultation</p>
+            <div class="contact-numbers">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                  <a href="https://wa.me/233206995489" target="_blank">+233 (0) 206-995-489</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                   <a href="tel:+233544431476">+233 (0) 544-431-476</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                  <a href="tel:+233246755950">+233 (0) 246-799-950</a>
+                </div>
+            </div>
+            <button class="get-in-touch-btn">Get in touch</button>
+        </div><br><br><br><br>
+    
+
+       
+        <footer>
+            <div class="footer-section country">
+                <h4>COUNTRY</h4>
+                <div class="currency-converter">
+                  <h4>Currency Converter</h4>
+                  <input type="number" id="amount" placeholder="Amount" value="1">
+                  <select id="fromCurrency">
+                    <option value="USD">US Dollar - USD</option>
+                    <option value="EUR">Euro - EUR</option>
+                    <option value="GHS">Ghanaian Cedi - GHS</option>
+                    <option value="GBP">British Pound - GBP</option>
+                    <option value="JPY">Japanese Yen - JPY</option>
+                  </select>
+                  <select id="toCurrency">
+                    <option value="GHS">Ghanaian Cedi - GHS</option>
+                    <option value="USD">US Dollar - USD</option>
+                    <option value="EUR">Euro - EUR</option>   
+                    <option value="GBP">British Pound - GBP</option>
+                    <option value="JPY">Japanese Yen - JPY</option>
+                  </select>
+                  <button onclick="convertCurrency()">Convert</button>
+                  <div class="results" id="conversionResult">Results: <span>0.00</span></div>
+                </div>
+              </div>
+          
+            <div class="footer-section address">
+              <h4>CONTACT NUMBERS</h4>
+            <a href="tel:+233208517482">+233 (0) 208-517-482</a>
+              <span>+233(0)244-186-970</span>
+              <span>+233(0)509-876-891</span>
+              <span>+233(0)591-565-778</span>
+              <br><br><br>
+
+
+              <div class="footer-section newsletter">
+                <h4>Subscribe to our newsletter</h4>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+              </div>
+            </div>
+            
+        
+        
+            </div>
+        
+            <div class="footer-section quick-links">
+              <h4>QUICK LINKS</h4>
+              <a href="#">Frequently Asked Questions (FAQ)</a><br>
+              <a href="#">Sales Directory</a><br>
+              <a href="#">Distributorship</a><br>
+              <a href="#">Global Peace Mission</a><br>
+              <a href="#">Awards & Citations</a><br>
+              <a href="#">Blog / News</a>
+           
+        
+            <div class="footer-section address">
+              <h4>ADDRESS</h4>
+              <span>Takoradi, Diabene. Adjascent GRNMA Guest House</span>
+              <span>GPS LOCATION CODE</span>
+              <span>CA-1071-5688</span>
+              <span>P.O. Box, DL 1203</span>
+              <br><br><br><b></b>
+              
+           
+         
+          </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

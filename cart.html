@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header class="cart-header">
+        <h1>Your Shopping Cart</h1>
+    </header>
+
+    <main class="cart-container">
+        <section class="cart-items">
+            <div class="item">
+                <img src="product1.jpg" alt="Product Image">
+                <div class="item-details">
+                    <h2>Product Name</h2>
+                    <p>Price: $50</p>
+                    <p>Quantity: 1</p>
+                    <button class="remove-item">Remove</button>
+                </div>
+            </div>
+            <!-- Additional items can go here -->
+        </section>
+
+        <aside class="cart-summary">
+            <h2>Order Summary</h2>
+            <p>Subtotal: $50</p>
+            <p>Tax: $5</p>
+            <p><strong>Total: $55</strong></p>
+            <button id="checkout-button">Proceed to Checkout</button>
+        </aside>
+    </main>
+
+    <div id="payment-modal" class="payment-modal hidden">
+        <div class="payment-content">
+            <h2>Select Payment Method</h2>
+            <form id="payment-form">
+                <div class="payment-option">
+                    <input type="radio" id="mtn" name="payment-method" value="MTN Mobile Money">
+                    <label for="mtn">MTN Mobile Money</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="telecel" name="payment-method" value="Telecel">
+                    <label for="telecel">Telecel</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="airteltigo" name="payment-method" value="Airtel/Tigo">
+                    <label for="airteltigo">Airtel/Tigo</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="paypal" name="payment-method" value="PayPal">
+                    <label for="paypal">PayPal</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="mastercard" name="payment-method" value="Mastercard">
+                    <label for="mastercard">Mastercard</label>
+                </div>
+                <button type="submit">Pay Now</button>
+            </form>
+            <button id="close-modal">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('checkout-button').addEventListener('click', () => {
+            document.getElementById('payment-modal').classList.remove('hidden');
+        });
+
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('payment-modal').classList.add('hidden');
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+
+            if (!selectedMethod) {
+                alert('Please select a payment method');
+                return;
+            }
+
+            const paymentData = {
+                method: selectedMethod.value,
+                amount: 55, // Example amount, adjust dynamically as needed
+            };
+
+            try {
+                // Replace with actual payment API endpoint
+                const response = await axios.post('sk_test_51QgzdeRxv0wvpTzMWMj1MrrRYH7lrVRYcafpVt3VmySLpiVAmcl7OOT6Mqwhglq1ZmqNzTQnwv9pgs64gT1DSltV00e88DZA1P', paymentData);
+
+                if (response.data.success) {
+                    alert('Payment successful!');
+                    document.getElementById('payment-modal').classList.add('hidden');
+                } else {
+                    alert('Payment failed: ' + response.data.message);
+                }
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert('An error occurred while processing your payment. Please try again.');
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cart-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .cart-container {
+            display: flex;
+            flex-direction: row;
+            padding: 2em;
+        }
+
+        .cart-items {
+            flex: 2;
+            margin-right: 1em;
+        }
+
+        .item {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            padding: 1em 0;
+        }
+
+        .item img {
+            max-width: 100px;
+            margin-right: 1em;
+        }
+
+        .cart-summary {
+            flex: 1;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .payment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .payment-content {
+            background: white;
+            padding: 2em;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .payment-option {
+            margin: 1em 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</body>
+</html>

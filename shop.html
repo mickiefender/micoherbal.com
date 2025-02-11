@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+   <link rel="stylesheet" href="shop.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<header class="header1">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <!-- Top Menu Button -->
+        <div class="top-menu" onclick="toggleSection('top-bar-mobile')">
+            <span class="hamburger-icon">&#9776;</span> TOP MENU
+        </div>
+
+        <!-- Logo Section -->
+        <div class="mobile-logo">
+            <img src="logos/OFFICIAL MICO LOGO.png" alt="">
+
+        </div>
+
+        <!-- Menu Button -->
+        <div class="menu-button" onclick="toggleSection('bottom-bar-mobile')">
+            <span class="hamburger-icon">&#9776;</span> MENU
+        </div>
+    </div>
+
+     <!-- Dropdown Menu -->
+<div id="mobile-menu" class="mobile-dropdown-menu">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a onclick="location.href='#about'">About</a></li>
+        <li>
+            <div class="dropdown">
+                <span onclick="toggleSubmenu('products-submenu')">Products <span class="submenu-icon">+</span></span>
+                <ul id="products-submenu" class="submenu">
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                    <li><a href="#">Product 3</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+
+            <div class="dropdown">
+                <span onclick="toggleSubmenu('resources-submenu')">Resources <span class="submenu-icon">+</span></span>
+                <ul id="resources-submenu" class="submenu">
+                    <li><a href="#">Where to Purchase</a></li>
+                    <li><a href="#">Become a Retailer</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <span onclick="toggleSubmenu('media-submenu')">Media <span class="submenu-icon">+</span></span>
+                <ul id="media-submenu" class="submenu">
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Taabea Group</a></li>
+    </ul>
+</div>
+
+      <!-- Desktop Header -->
+      <div class="top-bar">
+        <div class="logo">
+            <img src="logos/OFFICIAL MICO LOGO.png" alt="Vital Force Logo">
+        </div>
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i> <a href="tel:+233544431476">PHONE: <br> +233 544-431-476</a></span>
+            <span><i class="fas fa-envelope"></i> <a href="mailto:michaelcoleman106@gmail.com"> 
+                EMAIL: <br> michaelcoleman106@gmail.com</a></span>
+            <span><i class="fas fa-map-marker-alt"></i> LOCATION: <br> BA205 PAXIFIC AVE, GRNMA Kansaworodo, Takoradi, Ghana</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <nav>
+            <a href="home.html">Home</a>
+           <a onclick="location.href" href="#about">&#2 About</a>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="#">Product 1</a>
+                    <a href="#">Product 2</a>
+                    <a href="#">Product 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="">Resources</a>
+                <div class="dropdown-content">
+                    <a href="#">Where to purchase</a>
+                    <a href="#">Become a retailer or distributor</a>
+                    <a href="#">Product 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Media </a>
+                <div class="dropdown-content">
+                    <a href="#">Photos</a>
+                    <a href="#">Videos</a>
+                    <a href="#">Podcast</a>
+                </div>
+            </div>
+            <a href="home.html">Contact</a>
+            <a href="#">Mico Group</a>
+        </nav>
+       
+    </div>
+</header><br><br><br>
+
+<body>
+        <a onclick="location.href" href="shop.html" class="shop-now">SHOP NOW</a><br><br><br>
+    <div class="shop-container">
+        
+        <div class="products"><br>
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <img src="products imgs/Vital Force img.JPG" alt="Taabea Herbal Capsules">
+                <h2>Vital Force Herbal Powder</h2>
+                <div class="rating">☆☆☆☆☆</div>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <img src="products imgs/img2.jpg" alt="Taabea Zanecare Herbal Mixture">
+                <h2>Mico capsules</h2>
+                <div class="rating">☆☆☆☆☆</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Product Categories</h3>
+            <ul>
+                <li><a href="#">Capsules (3)</a></li>
+                <li><a href="#">Syrup (0)</a></li>
+                <li><a href="#">General (1)</a></li>
+                <li><a href="#">Powder (1)</a></li>
+            </ul>
+            <h3>Latest Products</h3>
+            <ul class="latest-products">
+                <li><a href="#"><img src="products imgs/img3.jpg" alt=""><br> Mico Capsules</a></li>
+                <li><a href="#"><img src="products imgs/img2.jpg" alt=""><br> Mico Herbal Capsules</a></li>
+                <li><a href="#"><img src="path-to-image-3.jpg" alt=""><br> Mico Koo Capsules</a></li>
+                <li><a href="#"><img src="path-to-image-4.jpg" alt=""><br> Taabea Herbal Mixture</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Have Some More Enquiries to make?</h2>
+            <p>Call us for a Free Consultation</p>
+            <div class="contact-numbers">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                  <a href="https://wa.me/233206995489" target="_blank">+233 (0) 206-995-489</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                   <a href="tel:+233544431476">+233 (0) 544-431-476</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                  <a href="tel:+233246755950">+233 (0) 246-799-950</a>
+                </div>
+            </div>
+            <button class="get-in-touch-btn">Get in touch</button>
+        </div><br><br><br><br>
+    
+
+       
+        <footer>
+            <div class="footer-section country">
+                <h4>COUNTRY</h4>
+                <div class="currency-converter">
+                  <h4>Currency Converter</h4>
+                  <input type="number" id="amount" placeholder="Amount" value="1">
+                  <select id="fromCurrency">
+                    <option value="USD">US Dollar - USD</option>
+                    <option value="EUR">Euro - EUR</option>
+                    <option value="GHS">Ghanaian Cedi - GHS</option>
+                    <option value="GBP">British Pound - GBP</option>
+                    <option value="JPY">Japanese Yen - JPY</option>
+                  </select>
+                  <select id="toCurrency">
+                    <option value="GHS">Ghanaian Cedi - GHS</option>
+                    <option value="USD">US Dollar - USD</option>
+                    <option value="EUR">Euro - EUR</option>   
+                    <option value="GBP">British Pound - GBP</option>
+                    <option value="JPY">Japanese Yen - JPY</option>
+                  </select>
+                  <button onclick="convertCurrency()">Convert</button>
+                  <div class="results" id="conversionResult">Results: <span>0.00</span></div>
+                </div>
+              </div>
+          
+            <div class="footer-section address">
+              <h4>CONTACT NUMBERS</h4>
+            <a href="tel:+233208517482">+233 (0) 208-517-482</a>
+              <span>+233(0)244-186-970</span>
+              <span>+233(0)509-876-891</span>
+              <span>+233(0)591-565-778</span>
+              <br><br><br>
+        
+            </div>
+        
+            <div class="footer-section quick-links">
+              <h4>QUICK LINKS</h4>
+              <a href="#">Frequently Asked Questions (FAQ)</a><br>
+              <a href="#">Sales Directory</a><br>
+              <a href="#">Distributorship</a><br>
+              <a href="#">Global Peace Mission</a><br>
+              <a href="#">Awards & Citations</a><br>
+              <a href="#">Blog / News</a>
+            </div>
+        
+            <div class="footer-section address">
+              <h4>ADDRESS</h4>
+              <span>Wusorkrom, Yamoransah-Fosu Road.</span>
+              <span>GPS LOCATION CODE</span>
+              <span>CA-1071-5688</span>
+              <span>P.O. Box, DL 1203</span>
+              <br><br><br><b></b>
+              <div class="footer-section newsletter">
+                <h4>Subscribe to our newsletter</h4>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+              </div>
+            </div>
+            
+        
+           
+        
+         
+          </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
